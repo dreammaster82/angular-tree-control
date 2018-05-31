@@ -404,7 +404,7 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
             };
         }])
 
-        .directive('treeRightClick', function($parse) {
+        .directive('treeRightClick', ['$parse', function($parse) {
             return function(scope, element, attrs) {
                 var fn = $parse(attrs.treeRightClick);
                 element.bind('contextmenu', function(event) {
@@ -413,7 +413,7 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
                     });
                 });
             };
-        })
+        }])
 
         .directive("treeitem", function() {
             return {
